@@ -2,10 +2,10 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Thread hiloA = new Relevos("A");
-        Thread hiloB = new Relevos("B");
-        Thread hiloC = new Relevos("C");
-        Thread hiloD = new Relevos("D");
+        Thread hiloA = new Relevo("A");
+        Thread hiloB = new Relevo("B");
+        Thread hiloC = new Relevo("C");
+        Thread hiloD = new Relevo("D");
 
         try {
             hiloA.join();
@@ -13,8 +13,8 @@ public class Main {
             hiloC.join();
             hiloD.join();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            System.out.println("Hilo interrumpido " + e.getMessage());
         }
-
+        System.out.println("La carrera acabo");
     }
 }
